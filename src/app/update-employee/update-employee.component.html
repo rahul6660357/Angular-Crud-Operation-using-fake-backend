@@ -1,0 +1,11 @@
+<form [formGroup]="userform">
+
+  <label>Firstname:</label>
+  <input type="text" formControlName="firstname" [(ngModel)]="empdata.firstname" required /><br><br>
+
+  <label>Lastname:</label>
+  <input type="text" formControlName="lastname" [(ngModel)]="empdata.lastname"/><br><br>
+  <label>Designation:</label>
+  <input type="text" formControlName="designation" [(ngModel)]="empdata.designation"/><br><br>
+  <button type="submit" [disabled]="!userform.valid" (click)="updateuser()">Update</button>
+</form>

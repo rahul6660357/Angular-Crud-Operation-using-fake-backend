@@ -1,0 +1,5 @@
+<h2 class="text-center text-success"> Employees List</h2>
+
+<ul *ngFor="let user of empdata">
+  <li> {{user.id}} {{user.firstname}} {{user.lastname}} <button class="btn btn-primary btn-sm " (click)="gotodeatils(user.id)">View Details </button> <button class="btn btn-primary btn-sm" (click)="goupdate(user.id)" >Update Employee</button></li>
+</ul>

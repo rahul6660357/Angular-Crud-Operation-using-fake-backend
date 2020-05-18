@@ -1,0 +1,14 @@
+<h2><div class="text-center text-success">Add Employee</div></h2>
+<form [formGroup]="userform">
+
+  <label>Firstname:</label>
+  <input type="text" formControlName="firstname" required/>
+<br><br>
+  <label>Lastname:</label>
+  <input type="text" formControlName="lastname" required/><br><br>
+  <label>Designation:</label>
+  <input type="text" formControlName="designation" required/><br><br>
+
+  <button (click)="submit()" [disabled]="!userform.valid" type="submit" class="btn btn-primary">Add Employee</button>
+
+</form>
