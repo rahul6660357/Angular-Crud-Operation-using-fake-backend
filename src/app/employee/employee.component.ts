@@ -22,6 +22,6 @@ private empdata: [];
   }
 
   goupdate(id1: any) {
-    this.router.navigate(['/update'], id1);
+    this.router.navigate(['/update'], { queryParams: { id: id1 } });
   }
 }

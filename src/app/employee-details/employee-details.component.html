@@ -1,3 +1,4 @@
+<div *ngIf="list">
 <div class="text-primary">Firstname:
   <p class="text-success">{{list.firstname}}</p>
 </div>
@@ -10,3 +11,6 @@
   <p class="text-success">{{list.designation}}</p>
 </div><br><br>
 
+</div>
+
+<div class="text-center"> <button (click)="deleteemployee(list.id)">Delete Employee</button> </div>

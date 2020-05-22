@@ -1,21 +1,9 @@
 {
   "employees": [
     {
-      "id": 1,
-      "firstname": "rahula",
-      "lastname": "sharma",
-      "designation": "developer"
-    },
-    {
       "id": 2,
       "firstname": "kanika",
       "lastname": "jindal",
-      "designation": "developer"
-    },
-    {
-      "id": 3,
-      "firstname": "abhishek",
-      "lastname": "sharma",
       "designation": "developer"
     },
     {
@@ -73,10 +61,16 @@
       "designation": "Junior developer"
     },
     {
-      "firstname": "vishal",
-      "lastname": "tyagi",
-      "designation": "engineer",
+      "firstname": "Rahul",
+      "lastname": "Sharma",
+      "designation": "Software developer",
       "id": 13
+    },
+    {
+      "firstname": "abhishek",
+      "lastname": "sharma",
+      "designation": "software developer",
+      "id": 14
     }
   ]
 }

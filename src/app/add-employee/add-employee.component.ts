@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder} from '@angular/forms';
 import {Validators} from '@angular/forms';
 import {EmployeeService} from '../employee.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-add-employee',
@@ -14,7 +15,7 @@ firstname: ['', Validators.required],
   lastname: ['', Validators.required],
   designation: ['', Validators.required]
 })
-  constructor(private fb: FormBuilder, private empservice: EmployeeService) { }
+  constructor(private fb: FormBuilder, private empservice: EmployeeService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -23,6 +24,7 @@ firstname: ['', Validators.required],
 this.empservice.AddEmployee(this.userform.value).subscribe((data) => {
   console.log(this.userform.value);
   alert('New Employee has been added');
+  this.router.navigate(['/employee']);
 } );
   }
 }

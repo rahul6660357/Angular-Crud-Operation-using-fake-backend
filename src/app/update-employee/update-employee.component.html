@@ -1,3 +1,5 @@
+
+<div *ngIf="empdata">
 <form [formGroup]="userform">
 
   <label>Firstname:</label>
@@ -9,3 +11,4 @@
   <input type="text" formControlName="designation" [(ngModel)]="empdata.designation"/><br><br>
   <button type="submit" [disabled]="!userform.valid" (click)="updateuser()">Update</button>
 </form>
+</div>

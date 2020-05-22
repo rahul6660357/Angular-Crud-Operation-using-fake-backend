@@ -9,33 +9,27 @@ import {FormBuilder, Validators} from '@angular/forms';
   styleUrls: ['./employee-details.component.scss']
 })
 export class EmployeeDetailsComponent implements OnInit {
-private empdata: [];
+private empdata;
 userid;
 
-private list: {id: number, firstname: string, lastname: string, designation: string}
-  constructor(private empservice: EmployeeService, private activatedroute: ActivatedRoute) { }
+private list: any
+  constructor(private empservice: EmployeeService, private activatedroute: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.empservice.getAllEmployees().subscribe((data) => {
       this.empdata = data;
-      this.activatedroute.queryParams.subscribe(params => {
-        this.userid = params.id;
-        this.list = this.alldetails(this.userid);
-        console.log(this.list);
+      const id = this.activatedroute.snapshot.queryParams.id;
+      console.log(id);
+      this.empservice.getById(id).subscribe((data1) => {
+        this.list = data1;
       });
     });
   }
 
-  private alldetails(userid: any) {
-    // tslint:disable-next-line:prefer-for-of
-    for (let i = 0; i < this.empdata.length; i++) {
-      if (this.empdata[i].id == userid) {
-        return this.empdata[i];
-      }
-    }
-  }
-
-  updateuser() {
-
+  deleteemployee(id: number) {
+    this.empservice.DeleteEmployee(id).subscribe((data2) => {
+     this.empdata = data2 ;
+     this.router.navigate(['/employee']);
+    });
   }
 }
